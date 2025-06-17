@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(120deg, #e0f7fa, #fff);
+  padding: 2rem;
+  color: #333;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Section Title */
+.portfolio h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #00796b;
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* Grid Layout */
+.card-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  padding: 0 1rem;
+}
+
+/* Card Styling */
+.card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.8s ease forwards;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.card:hover img {
+  transform: scale(1.05);
+}
+.card h2 {
+  font-size: 1.5rem;
+  margin: 1rem;
+  color: #00796b;
+}
+.card p {
+  font-size: 1rem;
+  margin: 0 1rem 1rem;
+  color: #555;
+}
+.btn {
+  display: inline-block;
+  margin: 0 1rem 1rem;
+  padding: 0.6rem 1.2rem;
+  background: #00796b;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+.btn:hover {
+  background: #004d40;
+  animation: pulse 0.5s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .portfolio h1 {
+    font-size: 2rem;
+  }
+  .btn {
+    width: calc(100% - 2rem);
+    text-align: center;
+  }
+}
